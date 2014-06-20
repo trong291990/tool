@@ -19,5 +19,11 @@ class HomeController extends BaseController {
 	{
 		return View::make('hello');
 	}
+        public function getIndex(){
+            return "Index Home";
+        }
+        public function anyAdd(){
+            return "POST ADD HOME";
+        }
 
 }
