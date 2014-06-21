@@ -1,5 +1,6 @@
 /bootstrap/compiled.php
 /app/config/database.php
+/vendor
 /nbproject
 composer.phar
 composer.lock
