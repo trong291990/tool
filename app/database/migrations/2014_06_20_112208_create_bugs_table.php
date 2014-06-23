@@ -12,14 +12,15 @@ class CreateBugsTable extends Migration {
 	 */
 	public function up()
 	{
-            $table->increments('id');
-            $table->string('name');
-            $table->string('description',1023);
-            $table->integer('story_id');
-            $table->integer('assigned_to');
-            $table->datetime('sloved_at')->nullable();
-            $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-            $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+            Schema::create('tasks',function(Blueprint $table){
+                $table->increments('id');
+                $table->string('name');
+                $table->string('description',2055);
+                $table->integer('story_id');
+                $table->integer('assigned_to');
+                $table->datetime('sloved_at')->nullable();
+                $table->timestamps();
+            });
 	}
 
 	/**

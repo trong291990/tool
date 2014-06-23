@@ -17,6 +17,7 @@ class CreateStoriesTable extends Migration {
                 $table->string('name');
                 $table->string('description',1023);
                 $table->integer('project_id');
+                $table->integer('sprint_id')->nullable();
                 $table->integer('created_by');
                 $table->integer('priority')->default(1);
                 $table->tinyInteger('status')->default(0);

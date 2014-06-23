@@ -12,20 +12,22 @@ class CreateProjectsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('projects', function(Blueprint $table)
-		{
-			$table->increments('id');
-                        $table->string('project_name');
-                        $table->text('project_description');
-                        $table->date('plan_start_date');
-                        $table->date('plan_end_date');
-                        $table->date('actual_start_date');
-                        $table->date('actual_end_date');
-                        $table->float('estimated');
-                        $table->integer('project_manager');
-                        $table->integer('created_by');
-			$table->timestamps();
-		});
+            Schema::drop('projects');
+            Schema::create('projects', function(Blueprint $table)
+            {
+                $table->increments('id');
+                $table->string('project_name');
+                $table->text('project_description');
+                $table->date('plan_start_date');
+                $table->date('plan_end_date');
+                $table->date('actual_start_date');
+                $table->date('actual_end_date');
+                $table->float('estimated');
+                $table->integer('project_manager');
+                $table->integer('scrum_master')->nullable();
+                $table->integer('created_by');
+                $table->timestamps();
+            });
 	}
 
 

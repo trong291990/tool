@@ -9,7 +9,7 @@ class ProjectController extends \BaseAdminController {
 	 */
 	public function index()
 	{
-           return $this->layout;
+           return \View::make('projects.index');
 	}
 
 
@@ -20,7 +20,7 @@ class ProjectController extends \BaseAdminController {
 	 */
 	public function create()
 	{
-		//
+            
 	}
 
 

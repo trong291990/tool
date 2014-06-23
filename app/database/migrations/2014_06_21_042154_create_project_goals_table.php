@@ -12,16 +12,16 @@ class CreateProjectGoalsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('project_goals', function(Blueprint $table)
-		{
-			$table->increments('id');
-                        $table->integer('project_id');
-                        $table->string('subject');
-                        $table->text('goal_description');
-                        $table->string('status');
-                        $table->integer('created_by');
-			$table->timestamps();
-		});
+            Schema::create('project_goals', function(Blueprint $table)
+            {
+                $table->increments('id');
+                $table->integer('project_id');
+                $table->string('subject',127);
+                $table->text('description');
+                $table->string('status');
+                $table->integer('created_by');
+                $table->timestamps();
+            });
 	}
 
 

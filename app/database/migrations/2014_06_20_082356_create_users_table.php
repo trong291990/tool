@@ -24,8 +24,8 @@ class CreateUsersTable extends Migration {
                 $table->string('city')->nullable();
                 $table->string('country')->nullable();
                 $table->string('experience',1023)->nullable();
-                $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+                $table->string('remember_token')->nullable();
+                $table->timestamps();
             });
 	}
 
