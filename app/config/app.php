@@ -122,6 +122,8 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
                 'Barryvdh\TwigBridge\ServiceProvider',
+                'Authority\AuthorityL4\AuthorityL4ServiceProvider',
+                'Way\Generators\GeneratorsServiceProvider',
 
 	),
 
@@ -190,6 +192,7 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
                 'Twig' => 'Barryvdh\TwigBridge\Twig',
+                'Authority' => 'Authority\AuthorityL4\Facades\Authority',
 	),
 
 );
