@@ -18,10 +18,13 @@ Route::get('/', function()
 Route::get('/bye',function(){
     return View::make('bye');
 });
+Route::resource('page','PageController'
+);
 Route::group(array('namespace'=>'AppUser'),function(){
     //Route::get('user',array('uses'=>'UserController@index'));
     Route::resource('user','UserController');
 });
-Route::group(array('namespace'=>'AppAdmin'),function(){
-    Route::get('admin/user',array('uses'=>'UserController@index'));
+Route::group(array('namespace'=>'AppAdmin','prefix' => 'admin'),function(){
+    Route::resource('project','ProjectController');
 });
+
