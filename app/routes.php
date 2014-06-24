@@ -26,5 +26,6 @@ Route::group(array('namespace'=>'AppUser'),function(){
 });
 Route::group(array('namespace'=>'AppAdmin','prefix' => 'admin'),function(){
     Route::resource('project','ProjectController');
+    Route::resource('member','MemberController');
 });
 

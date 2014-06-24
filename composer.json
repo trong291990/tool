@@ -5,8 +5,11 @@
 	"license": "MIT",
 	"require": {
 		"laravel/framework": "4.2.*",
-        "barryvdh/laravel-twigbridge": "0.3.x",
-        "machuga/authority-l4" : "dev-master"
+                "barryvdh/laravel-twigbridge": "0.3.x",
+                "machuga/authority-l4" : "dev-master",
+                "darsain/laravel-console": "dev-master",
+                "doctrine/dbal": "~2.3",
+                "anahkiasen/former": "dev-master"
 	},
 	"autoload": {
 		"classmap": [

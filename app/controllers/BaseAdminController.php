@@ -12,8 +12,9 @@
  * @author User
  */
 class BaseAdminController extends BaseController {
-     protected function setupLayout() {
-        $this->layout = 'layouts.admin';
-        parent::setupLayout();
-    }
+    public $layout = 'layouts.admin';
+//    protected function setupLayout() {
+//        $this->layout = 'layouts.admin';
+//        parent::setupLayout();
+//    }
 }

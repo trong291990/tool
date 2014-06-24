@@ -3,7 +3,7 @@
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateBugsTable extends Migration {
+class CreateDocumentsTable extends Migration {
 
 	/**
 	 * Run the migrations.
@@ -12,13 +12,14 @@ class CreateBugsTable extends Migration {
 	 */
 	public function up()
 	{
-            Schema::create('bugs',function(Blueprint $table){
+            Schema::create('documents', function(Blueprint $table)
+            {
                 $table->increments('id');
                 $table->string('name');
-                $table->string('description',2055);
-                $table->integer('story_id');
-                $table->integer('assigned_to');
-                $table->datetime('sloved_at')->nullable();
+                $table->string('full_url');
+                $table->integer('project_id')->nullable();
+                $table->integer('story_id')->nullable();
+                $table->integer('task_id')->nullable();
                 $table->timestamps();
             });
 	}
@@ -30,7 +31,7 @@ class CreateBugsTable extends Migration {
 	 */
 	public function down()
 	{
-            Schema::drop('bugs');
+            Scheme::drop('documents');
 	}
 
 }

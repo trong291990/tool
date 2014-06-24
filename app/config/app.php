@@ -124,7 +124,7 @@ return array(
                 'Barryvdh\TwigBridge\ServiceProvider',
                 'Authority\AuthorityL4\AuthorityL4ServiceProvider',
                 'Way\Generators\GeneratorsServiceProvider',
-
+                'Darsain\Console\ConsoleServiceProvider',
 	),
 
 	/*

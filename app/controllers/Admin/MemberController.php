@@ -1,6 +1,6 @@
 <?php
 namespace AppAdmin;
-class ProjectController extends \BaseAdminController {
+class MemberController extends \BaseAdminController {
 
 	/**
 	 * Display a listing of the resource.
@@ -9,7 +9,7 @@ class ProjectController extends \BaseAdminController {
 	 */
 	public function index()
 	{
-           return \View::make('project.index');
+           return \View::make('member.index');
 	}
 
 
@@ -20,7 +20,7 @@ class ProjectController extends \BaseAdminController {
 	 */
 	public function create()
 	{
-            
+		//
 	}
 
 
@@ -79,7 +79,7 @@ class ProjectController extends \BaseAdminController {
 	 */
 	public function destroy($id)
 	{
-		//
+            
 	}
 
 

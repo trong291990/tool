@@ -1,0 +1,21 @@
+#admin-list-member-table .avatar-td {
+    width: 30px;
+}
+#admin-list-member-table .avatar-td img {
+    width: 28px;
+    border: 1px solid #cccccc
+}
+#admin-list-member-table .actions-td form {
+    display: inline;
+}
+#admin-list-member-table .actions-td form input:before {
+    content: '\f00d';
+    font-family: 'FontAwesome';
+    cursor: pointer;
+    width: 1em;
+}
+#admin-list-member-table .actions-td form [type='submit'] {
+    background: none;
+    border: none;
+    color: orangered;
+}
