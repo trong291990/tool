@@ -1,9 +1,8 @@
 <!DOCTYPE html>
 <html>
     <head>
-         {% block head %}
         <meta charset="UTF-8">
-        <title>{% block title %}{% endblock %}</title>
+        <title>SFRTool <?php echo View::yieldContent('title') ?></title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         <!-- bootstrap 3.0.2 -->
         <link href="/assets/css/bootstrap.min.css" rel="stylesheet" type="text/css" />
@@ -31,7 +30,6 @@
           <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.0/html5shiv.js"></script>
           <script src="https://oss.maxcdn.com/libs/respond.js/1.3.0/respond.min.js"></script>
         <![endif]-->
-        {% endblock %}
     </head>
     <body class="skin-blue">
         <!-- header logo: style can be found in header.less -->
@@ -413,7 +411,7 @@
                 </section>
                 <!-- Main content -->
                 <section class="content">
-                    {% block content %}{% endblock %}
+                   <?php echo $content;?>
                 </section><!-- /.content -->
             </aside><!-- /.right-side -->
         </div><!-- ./wrapper -->
@@ -440,6 +438,9 @@
         <!-- jQuery Knob Chart -->
         <script src="/assets/js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
         <!-- daterangepicker -->
+        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.js">
+        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.date.extensions.js">
+        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.extensions.js">
         <script src="/assets/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src="/assets/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
@@ -449,11 +450,10 @@
         <!-- AdminLTE App -->
         <script src="/assets/js/AdminLTE/app.js" type="text/javascript"></script>
         
-        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-        <script src="/assets/js/AdminLTE/dashboard.js" type="text/javascript"></script>     
+        <!-- AdminLTE dashboard demo (This is only for demo purposes) -->   
         
         <!-- AdminLTE for demo purposes -->
         <script src="/assets/js/AdminLTE/demo.js" type="text/javascript"></script>
-
+        <?php echo View::yieldContent('script') ?>
     </body>
 </html>

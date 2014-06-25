@@ -9,7 +9,7 @@ class MemberController extends \BaseAdminController {
 	 */
 	public function index()
 	{
-           return \View::make('member.index');
+           $this->render(\View::make('member.index'));
 	}
 
 
@@ -20,7 +20,7 @@ class MemberController extends \BaseAdminController {
 	 */
 	public function create()
 	{
-		//
+             $this->render(\View::make('member.create'));
 	}
 
 

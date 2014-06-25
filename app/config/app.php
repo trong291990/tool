@@ -125,6 +125,7 @@ return array(
                 'Authority\AuthorityL4\AuthorityL4ServiceProvider',
                 'Way\Generators\GeneratorsServiceProvider',
                 'Darsain\Console\ConsoleServiceProvider',
+                'Former\FormerServiceProvider',
 	),
 
 	/*
@@ -193,6 +194,7 @@ return array(
 		'View'            => 'Illuminate\Support\Facades\View',
                 'Twig' => 'Barryvdh\TwigBridge\Twig',
                 'Authority' => 'Authority\AuthorityL4\Facades\Authority',
+                'Former' => 'Former\Facades\Former',
 	),
 
 );

@@ -15,7 +15,7 @@ Form::macro('delete',function($url, $button_label='Delete',$message='Are you sur
         $form_parameters['onsubmit'] = "return confirm('{$message}')";
     };
     if(empty($button_options)){
-        $button_options['class']='btn btn-danger';
+        $button_options['class']='';
     }
     return Form::open($form_parameters)
             . Form::submit($button_label, $button_options)

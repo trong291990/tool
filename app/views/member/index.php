@@ -1,13 +1,10 @@
-{% extends "layouts.admin" %}
-{% block title %}Admin | Users{% endblock %}
-{% block head %}
-    {{ parent() }}
-{% endblock %}
-{% block content %} 
-    <div class="clearfix">
+<?php View::startSection('title'); ?>
+     | All Members
+<?php View::stopSection(); ?>  
+<div class="clearfix">
         <div class="box box-primary">
             <div class="box-header">
-                <h3 class="box-title">Memebers</h3>
+                <h3><i class="fa fa-plus-circle"></i> <a href="/admin/member/add">Add Member</a></h3>
                 <div class="box-tools">
                     <ul class="pagination pagination-sm no-margin pull-right">
                         <li><a href="#">«</a></li>
@@ -26,26 +23,25 @@
                         <th style="width: 30px;">Avatar</th>
                         <th>Name</th>
                         <th>Email</th>
-                        <th>Progress</th>
+                        <th>Phone number</th>
+                        <td>Joined at</td>
                         <th>Actions</th>
                     </tr>
                     <tr>
                         <td>1.</td>
                         <td class="avatar-td"><img src="/assets/img/avatar3.png" class="img-responsive img-circle" /></td>
-                        <td>Name</td>
-                        <td>Email</td>
+                        <td>Tran Dinh Trong</td>
+                        <td><a href="mailto:trandinhtrong90@gmail.com">trandinhtrong90</a></td>
+                        <td>0989944721</td>
                         <td>
-                            <div class="progress xs">
-                                <div style="width: 55%" class="progress-bar progress-bar-danger"></div>
-                            </div>
+                           
                         </td>
                         <td class="actions-td">
-                            <a href="#"><i class="fa fa-edit"></i></a>
-                            {{ form_delete('/admin/member/1', '<i class="fa fa-times"></i>','Are you sure delete this member ?') }}
+                            <a href="#">View detail</a>
+                            <?=Form::delete('/admin/member/1', 'Delete','Are you sure delete this member ?')?>
                         </td>
                     </tr>
                 </tbody></table>
             </div><!-- /.box-body -->
         </div>
     </div>
-{% endblock %}
