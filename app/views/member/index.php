@@ -4,15 +4,9 @@
 <div class="clearfix">
         <div class="box box-primary">
             <div class="box-header">
-                <h3><i class="fa fa-plus-circle"></i> <a href="/admin/member/add">Add Member</a></h3>
+                <h3><i class="fa fa-plus-circle"></i> <a href="/admin/member/create">Add Member</a></h3>
                 <div class="box-tools">
-                    <ul class="pagination pagination-sm no-margin pull-right">
-                        <li><a href="#">«</a></li>
-                        <li><a href="#">1</a></li>
-                        <li><a href="#">2</a></li>
-                        <li><a href="#">3</a></li>
-                        <li><a href="#">»</a></li>
-                    </ul>
+                    <?php echo $members->links(); ?>
                 </div>
             </div><!-- /.box-header -->
             <div class="box-body no-padding">
@@ -27,20 +21,24 @@
                         <td>Joined at</td>
                         <th>Actions</th>
                     </tr>
+                    <?php foreach ($members as $member): ?>
                     <tr>
-                        <td>1.</td>
-                        <td class="avatar-td"><img src="/assets/img/avatar3.png" class="img-responsive img-circle" /></td>
-                        <td>Tran Dinh Trong</td>
-                        <td><a href="mailto:trandinhtrong90@gmail.com">trandinhtrong90</a></td>
-                        <td>0989944721</td>
+                        <td><?=$member->id?></td>
+                        <td class="avatar-td">
+                            <img src="/assets/img/avatar3.png" class="img-responsive img-circle" />
+                        </td>
+                        <td><?=$member->user->name?></td>
+                        <td><a href="mailto:<?=$member->user->email?>"><?=$member->user->email?></a></td>
+                        <td><?=$member->user->phone_number?></td>
                         <td>
                            
                         </td>
                         <td class="actions-td">
                             <a href="#">View detail</a>
-                            <?=Form::delete('/admin/member/1', 'Delete','Are you sure delete this member ?')?>
+                            <?=Form::delete('/admin/member/'.$member->id, 'Delete','Are you sure delete this member ?')?>
                         </td>
                     </tr>
+                    <?php endforeach; ?>
                 </tbody></table>
             </div><!-- /.box-body -->
         </div>

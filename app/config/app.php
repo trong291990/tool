@@ -126,6 +126,7 @@ return array(
                 'Way\Generators\GeneratorsServiceProvider',
                 'Darsain\Console\ConsoleServiceProvider',
                 'Former\FormerServiceProvider',
+            
 	),
 
 	/*
@@ -195,6 +196,8 @@ return array(
                 'Twig' => 'Barryvdh\TwigBridge\Twig',
                 'Authority' => 'Authority\AuthorityL4\Facades\Authority',
                 'Former' => 'Former\Facades\Former',
+                'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
+                'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
 	),
 
 );

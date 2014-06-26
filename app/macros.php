@@ -21,3 +21,21 @@ Form::macro('delete',function($url, $button_label='Delete',$message='Are you sur
             . Form::submit($button_label, $button_options)
             . Form::close();
 });
+
+HTML::macro('alert', function($type, $message, $head = null) {
+    switch ($type) {
+        case 'danger': //red
+            $head = $head ? $head : 'Error';
+            break;
+        case 'warning': //yellow
+            $head = $head ? $head : 'Warning';
+            break;
+        case 'info': //blue
+            $head = $head ? $head : 'Info';
+            break;
+        case 'success': //green
+            $head = $head ? $head : 'Success';
+            break;
+    }
+    return '<div class="alert alert-'. $type .'"><strong>'. $head .': </strong>' . $message . '</div>';
+});

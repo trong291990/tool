@@ -438,9 +438,9 @@
         <!-- jQuery Knob Chart -->
         <script src="/assets/js/plugins/jqueryKnob/jquery.knob.js" type="text/javascript"></script>
         <!-- daterangepicker -->
-        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.js">
-        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.date.extensions.js">
-        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.extensions.js">
+        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.js"></script>
+        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+        <script type="text/javascript" src="/assets/js/plugins/input-mask/jquery.inputmask.extensions.js"></script>
         <script src="/assets/js/plugins/daterangepicker/daterangepicker.js" type="text/javascript"></script>
         <!-- Bootstrap WYSIHTML5 -->
         <script src="/assets/js/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js" type="text/javascript"></script>
@@ -452,8 +452,9 @@
         
         <!-- AdminLTE dashboard demo (This is only for demo purposes) -->   
         
-        <!-- AdminLTE for demo purposes -->
+        <!-- AdminLTE for demo purposes 
         <script src="/assets/js/AdminLTE/demo.js" type="text/javascript"></script>
+        -->
         <?php echo View::yieldContent('script') ?>
     </body>
 </html>

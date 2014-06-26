@@ -19,3 +19,29 @@
     border: none;
     color: orangered;
 }
+.form-in-box {
+    margin-bottom: 20px;
+}
+.form-in-box .controls label.radio {
+    padding-left: 20px;
+}
+.form-in-box .controls > label.radio:first-child {
+    margin-top: 0;
+}
+.form-in-box > .form-actions {
+    margin-top: 20px
+}
+.help-inline {
+    color: #f56954;
+}
+.box-header h3 {
+    padding-left: 20px;
+}
+.box-header .pagination {
+    margin: 0;
+    float: right
+}
+.box-header .pagination > li > a,.box-header .pagination > li > span {
+  font-size: 12px;
+  padding: 5px 10px;
+}

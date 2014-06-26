@@ -1,10 +1,4 @@
-{% extends "layouts.admin" %}
-{% block title %}Admin | Project{% endblock %}
-{% block head %}
-    {{ parent() }}
-{% endblock %}
-{% block content %} 
-    <!-- Small boxes (Stat box) -->
+
     <div class="clearfix">
         <div class="box box-primary">
             <div class="box-header col-sm-12"> <h3><i class="fa fa-plus-circle"></i> <a href="/admin/project/create">Add New Project</a></h3></div>
@@ -88,4 +82,3 @@
              </div>
         </div>
     </div><!-- /.row -->
-{% endblock %}

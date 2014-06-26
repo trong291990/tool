@@ -24,8 +24,8 @@ Route::group(array('namespace'=>'AppUser'),function(){
     //Route::get('user',array('uses'=>'UserController@index'));
     Route::resource('user','UserController');
 });
-Route::group(array('namespace'=>'AppAdmin','prefix' => 'admin'),function(){
-    Route::resource('project','ProjectController');
-    Route::resource('member','MemberController');
+Route::group(array('prefix' => 'admin'),function(){
+    Route::resource('project','AdminProjectController');
+    Route::resource('member','AdminMemberController');
 });
 
