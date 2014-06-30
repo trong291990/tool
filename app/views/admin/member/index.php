@@ -1,16 +1,23 @@
 <?php View::startSection('title'); ?>
      | All Members
-<?php View::stopSection(); ?>  
-<div class="clearfix">
-        <div class="box box-primary">
-            <div class="box-header">
-                <h3><i class="fa fa-plus-circle"></i> <a href="/admin/member/create">Add Member</a></h3>
-                <div class="box-tools">
-                    <?php echo $members->links(); ?>
-                </div>
-            </div><!-- /.box-header -->
-            <div class="box-body no-padding">
-                <table class="table" id="admin-list-member-table">
+<?php View::stopSection(); ?>
+   
+<div class="row">
+    <div class="col-sm-3">
+        <div class="webpage">
+            <div class="row">
+                <h4 class="sidebar-title">Actions</h4>
+                <ul class="list-unstyled actions-sidebar">
+                    <li><a href="#">Add project</a></li>
+                    <li><a href="#">Import project</a></li>
+                    <li><a href="#">Export project</a></li>
+                </ul> 
+            </div>
+        </div>
+    </div>
+    <div class="col-sm-9">
+        <div class="webpage">
+             <table class="table" id="admin-list-member-table">
                     <tbody>
                         <tr>
                         <th style="width: 10px">#</th>
@@ -40,6 +47,7 @@
                     </tr>
                     <?php endforeach; ?>
                 </tbody></table>
-            </div><!-- /.box-body -->
+             <?php echo $members->links(); ?>
         </div>
     </div>
+</div>

@@ -12,5 +12,5 @@
  * @author User
  */
 class BaseAdminController extends BaseController {
-    public $layout = 'layouts.admin';
+    public $layout = 'layouts.clean';
 }

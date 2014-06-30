@@ -1,0 +1,95 @@
+/*
+To change this license header, choose License Headers in Project Properties.
+To change this template file, choose Tools | Templates
+and open the template in the editor.
+*/
+/* 
+    Created on : Mar 25, 2014, 12:40:14 AM
+    Author     : DinhTrong
+*/
+@media (min-width: 800px) {
+    .container {
+       max-width: 1200px;
+    }
+}
+body {
+    background: #F2F2F2;
+    font-family: Tahoma,Helvetica,Arial,sans-serif
+}
+.webpage {
+  background-color: #FFFFFF;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.11);
+  min-height: 400px;
+  padding: 35px;
+}
+.page-content {
+}
+.navbar-default .navbar-nav > .active > a, .navbar-default .navbar-nav > .active > a:hover, .navbar-default .navbar-nav > .active > a:focus{
+    background: transparent;
+    color: #222222
+}
+.navbar-collapse > ul {
+    padding-top: 10px;
+}
+.breadcrumb {
+    background: transparent;
+    margin-top: 0;
+    padding-top: 0;
+}
+.breadcrumb li:nth-child(1){
+    font-size: 2.5em;
+}
+.breadcrumb li:nth-child(2){
+    font-size: 2.3em;
+}
+.breadcrumb li:nth-child(3){
+    font-size: 1.5em;
+}
+.breadcrumb li:nth-child(4){
+    font-size: 1em;
+}
+.breadcrumb a {
+    text-decoration: none;
+    font-weight: 100;
+}
+.breadcrumb a,.breadcrumb li,h1,h2,h3,h4,th {
+     font-family: 'Open Sans',Tahoma,Helvetica,Arial,sans-serif;
+}
+.sidebar-title {
+    border-bottom: 1px solid #cccccc;
+    padding-bottom: 8px;
+}
+.actions-sidebar {
+}
+.actions-sidebar li {
+    padding: 3px 0px;
+}
+#footer {
+    margin:20px 0px;
+    text-align: center;
+    font-size: 0.8em
+}
+#main-nav {
+    background: transparent;
+    border: none;
+    margin-bottom: 25px;
+}
+#main-nav .navbar-brand {
+    width: 131px;
+    height: 61px;
+    background: url('../img/tool-logo.png');
+    background-size: cover;
+    text-indent: -9999px;
+}
+.avatar-td img {
+    max-width: 40px
+}
+form label {
+    font-weight: normal
+}
+.webpage > h3:first-child {
+    margin-top: 0
+}
+form .form-actions {
+    margin-top: 20px;
+}

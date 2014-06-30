@@ -8,7 +8,7 @@ class AdminProjectController extends \BaseAdminController {
 	 */
 	public function index()
 	{
-           $this->render(\View::make('project.index'));
+           $this->render(\View::make('admin.project.index'));
 	}
 
 

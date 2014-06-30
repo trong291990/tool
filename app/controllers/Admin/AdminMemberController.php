@@ -8,8 +8,8 @@ class AdminMemberController extends \BaseAdminController {
 	 */
 	public function index()
 	{
-           $members = Member::paginate(20);
-           $this->render(\View::make('member.index')->with('members',$members));
+           $members = Member::paginate(5);
+           $this->render(\View::make('admin.member.index')->with('members',$members));
 	}
 
 
@@ -20,7 +20,7 @@ class AdminMemberController extends \BaseAdminController {
 	 */
 	public function create()
 	{
-            $this->render(\View::make('member.create'));
+            $this->render(\View::make('admin.member.create'));
 	}
 
 

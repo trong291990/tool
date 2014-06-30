@@ -1,15 +1,24 @@
 <?php View::startSection('title'); ?>
      | Create Member
-<?php View::stopSection(); ?>  
-<div class="clearfix">
-    <div class="box box-primary">
-        <div class="box-header">
+<?php View::stopSection(); ?>
+<div class="row">
+    <div class="col-sm-3">
+        <div class="webpage">
+            <div class="row">
+                <h4 class="sidebar-title">Actions</h4>
+                <ul class="list-unstyled actions-sidebar">
+                    <li><a href="#">Add project</a></li>
+                    <li><a href="#">Import project</a></li>
+                    <li><a href="#">Export project</a></li>
+                </ul> 
+            </div>
         </div>
-        <div class="box-body no-padding clearfix">
-            <div class="col-sm-8 col-sm-offset-2">
-                <h3>Add new member</h3>
-                <hr class="divider" />
-                <?php 
+    </div>
+    <div class="col-sm-9">
+        <div class="webpage">
+            <h3>Member detail <small>* -signifies as required field</small></h3>
+            
+              <?php 
                     if (Session::has('message')){
                         $message = Session::get('message');
                         echo HTML::alert('success',$message,'Success');
@@ -52,13 +61,13 @@
                           ->large_inverse_reset('Reset');
                     echo  Former::close()
                     ?>
-            </div>
         </div>
     </div>
 </div>
+
 <?php View::startSection('script'); ?>
      <script>
-        $("#birthday").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
-        $("#joind_at").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+       // $("#birthday").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+       // $("#joind_at").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
      </script>
 <?php View::stopSection(); ?>  
