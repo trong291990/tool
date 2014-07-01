@@ -1,13 +1,14 @@
 <?php View::startSection('title'); ?>
      | Create Member
 <?php View::stopSection(); ?>
+<?php echo Breadcrumbs::render('add_member') ?>     
 <div class="row">
     <div class="col-sm-3">
         <div class="webpage">
             <div class="row">
                 <h4 class="sidebar-title">Actions</h4>
                 <ul class="list-unstyled actions-sidebar">
-                    <li><a href="#">Add project</a></li>
+                    <li><a href="/admin/member">All member</a></li>
                     <li><a href="#">Import project</a></li>
                     <li><a href="#">Export project</a></li>
                 </ul> 
@@ -54,7 +55,7 @@
                           ->class('form-control');
                     echo Former::text('country')
                           ->class('form-control');
-                    echo Former::text('joind_date')
+                    echo Former::text('joined_date')
                           ->class('form-control');
                     echo Former::actions()
                           ->large_primary_submit('Submit')
@@ -66,8 +67,11 @@
 </div>
 
 <?php View::startSection('script'); ?>
-     <script>
-       // $("#birthday").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
-       // $("#joind_at").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
-     </script>
+    <script type="text/javascript" src="/assets/clean/js/plugins/input-mask/jquery.inputmask.js"></script>
+    <script type="text/javascript" src="/assets/clean/js/plugins/input-mask/jquery.inputmask.date.extensions.js"></script>
+    <script type="text/javascript" src="/assets/clean/js/plugins/input-mask/jquery.inputmask.extensions.js"></script>
+    <script>
+        $("#birthday").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+        $("#joined_date").inputmask("mm/dd/yyyy", {"placeholder": "mm/dd/yyyy"});
+    </script>
 <?php View::stopSection(); ?>  

@@ -69,7 +69,7 @@ class AdminMemberController extends \BaseAdminController {
 	 */
 	public function show($id)
 	{
-		//
+	
 	}
 
 
@@ -81,7 +81,17 @@ class AdminMemberController extends \BaseAdminController {
 	 */
 	public function edit($id)
 	{
-		//
+            $member = Member::find($id);
+            if($member->joined_date){
+                $member->joined_date = LocalizedCarbon::createFromFormat
+                        ('Y-m-d',$member->joined_date)->format('m/d/Y');
+            }
+            if($member->user->birthday){
+                $member->user->birthday = LocalizedCarbon::createFromFormat
+                        ('Y-m-d',$member->user->birthday)->format('m/d/Y');
+            }
+            //die($member->user->birthday);
+            $this->render(View::make('admin.member.edit')->with('member',$member));
 	}
 
 
@@ -93,7 +103,36 @@ class AdminMemberController extends \BaseAdminController {
 	 */
 	public function update($id)
 	{
-		//
+            $user =  User::find(Input::get('user_id'));
+            $user->name = Input::get('name');
+            $user->email = Input::get('email');
+            $user->gender = Input::get('gender');
+            $user->birthday = Input::get('birthday');
+            $user->phone_number = Input::get('phone_number');
+            $user->street_address = Input::get('street_address');
+            $user->city = Input::get('city');
+            $user->country = Input::get('country');
+            $password = Input::get('password');
+            if($password){
+                $user->password = $password;
+            }else {
+                unset($user->password);
+            }
+            $member = Member::find($id);
+            $member->joined_date = Input::get('joined_date');
+            $validator = $user->isFailValidation(true);
+            if($validator){
+                return Redirect::to('/admin/member/'.$id.'/edit')->withErrors($validator);
+            }
+            $memberValidator = $member->isFailValidation();
+            if($memberValidator){
+                return Redirect::to('/admin/member/create')->withErrors($memberValidator);
+            }
+            $user->save();
+            $user->member()->save($member);
+            $message = "The member {$user->name} has been saved success.";
+            Session::flash('message',$message);
+            return Redirect::to('/admin/member');
 	}
 
 

@@ -22,8 +22,7 @@ class CreateStoriesTable extends Migration {
                 $table->integer('priority')->default(1);
                 $table->tinyInteger('status')->default(0);
                 $table->integer('point');
-                $table->timestamp('created_at')->default(DB::raw('CURRENT_TIMESTAMP'));
-                $table->timestamp('updated_at')->default(DB::raw('CURRENT_TIMESTAMP on update CURRENT_TIMESTAMP'));
+                $table->timestamps();
             });
 	}
 

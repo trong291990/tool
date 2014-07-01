@@ -38,15 +38,11 @@
             </div>
         </div>
         <div class="page-content container">
-            <ol class="breadcrumb">
-                <li><a href="#">Home</a></li>
-                <li><a href="#">Library</a></li>
-                <li class="active">Data</li>
-             </ol>
             <?php echo $content;?>
         </div>
         <div id="footer">
             Copyright 2014 - SRF Software
         </div>
+        <?php echo View::yieldContent('script') ?>
     </body>
 </html>

@@ -93,3 +93,36 @@ form label {
 form .form-actions {
     margin-top: 20px;
 }
+.radio input[type="radio"], .radio-inline input[type="radio"], .checkbox input[type="checkbox"], .checkbox-inline input[type="checkbox"] {
+    margin-top: 0px;
+}
+.help-inline {
+    color: #AF2018
+}
+.control-group {
+    margin-bottom: 15px;
+}
+.actions-td {
+    min-width: 60px
+}
+.actions-td a.edit, .actions-td [type="submit"]{
+    width: 27px;
+    height: 27px;
+    display: inline-block;
+    background-size: cover;
+    text-indent: -9999px;
+    border: none;
+    background-color: transparent
+}
+.actions-td a.edit {
+    background: url('../img/edit-small.png') top left no-repeat;
+    margin-right: 7px;
+}
+.actions-td  form {
+    display: inline-block
+}
+.actions-td [type="submit"]{
+     background: url('../img/recycle-small.png') top left no-repeat;
+     position: relative;
+     top:2px;
+}

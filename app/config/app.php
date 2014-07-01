@@ -126,6 +126,7 @@ return array(
                 'Way\Generators\GeneratorsServiceProvider',
                 'Darsain\Console\ConsoleServiceProvider',
                 'Former\FormerServiceProvider',
+                'DaveJamesMiller\Breadcrumbs\ServiceProvider',
             
 	),
 
@@ -198,6 +199,7 @@ return array(
                 'Former' => 'Former\Facades\Former',
                 'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
                 'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
+                'Breadcrumbs' => 'DaveJamesMiller\Breadcrumbs\Facade',
 	),
 
 );
