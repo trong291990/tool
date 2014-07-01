@@ -10,7 +10,8 @@
                 "darsain/laravel-console": "dev-master",
                 "doctrine/dbal": "~2.3",
                 "anahkiasen/former": "dev-master",
-                "laravelrus/localized-carbon": "1.*"
+                "laravelrus/localized-carbon": "1.*",
+		"davejamesmiller/laravel-breadcrumbs": "~2.2.1"
 	},
 	"autoload": {
 		"classmap": [

@@ -14,5 +14,25 @@ class Member extends User {
         'user_id'=>'integer',
         'joined_date'=>'date_format:m/d/Y'
     );
+    public static function boot()
+    {
+        parent::boot();
+        static::creating(function($page)
+        {
+           if(isset($page->joined_date) && $page->joined_date){
+               $page->joined_date = LocalizedCarbon::createFromFormat('m/d/Y',$page->joined_date)->format('Y-m-d');
+           }
+        });
+        static::updating(function($page)
+        {
+           if(isset($page->joined_date) && $page->joined_date){
+               $page->joined_date = LocalizedCarbon::createFromFormat('m/d/Y',$page->joined_date)->format('Y-m-d');
+           }
+        });
+        static::created(function($page)
+        {
+           
+        });
+    }
 }
 

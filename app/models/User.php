@@ -35,7 +35,8 @@ class User extends BaseModel {
         'street_address'=>'max:225',
         'city'=>'max:255',
         'country'=>'max:255',
-        'experience'=>'max:1023'
+        'experience'=>'max:1023',
+        'password'=>'Confirmed|max:12'
     );
 
 
@@ -76,13 +77,12 @@ class User extends BaseModel {
            if(isset($page->birthday) && $page->birthday){
                $page->birthday = LocalizedCarbon::createFromFormat('m/d/Y',$page->birthday)->format('Y-m-d');
            }
-           if(isset($page->joined_at) && $page->joined_at){
-               $page->joined_at = LocalizedCarbon::createFromFormat('m/d/Y',$page->joined_at)->format('Y-m-d');
-           }
         });
         static::updating(function($page)
         {
-            // do stuff
+           if(isset($page->birthday) && $page->birthday){
+               $page->birthday = LocalizedCarbon::createFromFormat('m/d/Y',$page->birthday)->format('Y-m-d');
+           }
         });
         static::created(function($page)
         {
