@@ -47,7 +47,9 @@ class AdminMemberController extends \BaseAdminController {
             $user->city = Input::get('city');
             $user->country = Input::get('country');
             $validator = $user->isFailValidation();
+            $error_message = "The member could not be saved";
             if($validator){
+                Session::flash('error_message',$error_message);
                 return Redirect::to('/admin/member/create')->withErrors($validator);
             }
             $user->save();
@@ -61,6 +63,7 @@ class AdminMemberController extends \BaseAdminController {
                 Session::flash('message',$message);
                 return Redirect::to('/admin/member/create');
             }
+            Session::flash('error_message',$error_message);
             return Redirect::to('/admin/member/create')->withErrors($memberValidator);
 	}
 
@@ -125,11 +128,14 @@ class AdminMemberController extends \BaseAdminController {
             $member = Member::find($id);
             $member->joined_date = Input::get('joined_date');
             $validator = $user->isFailValidation(true);
+            $error_message = "The member could not be saved";
             if($validator){
+                Session::flash('error_message',$error_message);
                 return Redirect::to('/admin/member/'.$id.'/edit')->withErrors($validator);
             }
             $memberValidator = $member->isFailValidation();
             if($memberValidator){
+                Session::flash('error_message',$error_message);
                 return Redirect::to('/admin/member/create')->withErrors($memberValidator);
             }
             $user->save();
@@ -148,7 +154,11 @@ class AdminMemberController extends \BaseAdminController {
 	 */
 	public function destroy($id)
 	{
-            
+            $member = Member::find($id);
+            $message = "The member {$member->user->name} has been deteted.";
+            $member->delete();
+            Session::flash('message',$message);
+            return Redirect::to('/admin/member');
 	}
         
         

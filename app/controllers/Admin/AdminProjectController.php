@@ -8,7 +8,8 @@ class AdminProjectController extends \BaseAdminController {
 	 */
 	public function index()
 	{
-           $this->render(\View::make('admin.project.index'));
+           $projects = Project::orderBy('created_at','DESC')->paginate(5);
+           $this->render(\View::make('admin.project.index')->with('projects',$projects));
 	}
 
 
@@ -19,7 +20,7 @@ class AdminProjectController extends \BaseAdminController {
 	 */
 	public function create()
 	{
-            $this->render(\View::make('project.create'));
+            $this->render(\View::make('admin.project.create'));
 	}
 
 
@@ -30,7 +31,21 @@ class AdminProjectController extends \BaseAdminController {
 	 */
 	public function store()
 	{
-		//
+            $project = new Project();
+            $project->name = Input::get('name');
+            $project->description = Input::get('description');
+            $project->plan_start_date = Input::get('plan_start_date');
+            $project->plan_end_date = Input::get('plan_end_date');
+            $validator = $project->isFailValidation();
+            if($validator){
+                $error_message = "The project could not be saved";
+                Session::flash('error_message',$error_message);
+                return Redirect::to('/admin/member/create')->withErrors($validator);
+            }
+            $project->save();
+            $message = "The project has been created success";
+            Session::flash('message',$message);
+            return Redirect::to("/admin/project/{$project->id}/resource");
 	}
 
 
@@ -80,6 +95,11 @@ class AdminProjectController extends \BaseAdminController {
 	{
 		//
 	}
-
+        
+        public function resource($id){
+            $project = Project::find($id);
+            $members = Member::all();
+            $this->render(\View::make('admin.project.resource')->with(compact('project','members')));
+        }
 
 }

@@ -33,6 +33,10 @@ class Member extends User {
         {
            
         });
+        static::deleted(function($obj){
+            $user = User::find($obj->user_id);
+            $user->delete();
+        });
     }
 }
 

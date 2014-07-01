@@ -9,8 +9,7 @@
                 <h4 class="sidebar-title">Actions</h4>
                 <ul class="list-unstyled actions-sidebar">
                     <li><a href="/admin/member/create">Add Member</a></li>
-                    <li><a href="#">Import project</a></li>
-                    <li><a href="#">Export project</a></li>
+                    <li><a href="#">Progress Report</a></li>
                 </ul> 
             </div>
         </div>
@@ -44,7 +43,7 @@
                         <td><a href="mailto:<?=$member->user->email?>"><?=$member->user->email?></a></td>
                         <td><?=$member->user->phone_number?></td>
                         <td>
-                             <?= $member->joined_date!='0000-00-00' ?
+                             <?= $member->joined_date!='0000-00-00'&&$member->joined_date!='' ?
                                 LocalizedCarbon::createFromFormat('Y-m-d',$member->joined_date)->format('m/d/Y') 
                                 : ""
                             ?> 

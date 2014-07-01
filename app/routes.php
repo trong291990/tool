@@ -26,6 +26,17 @@ Route::group(array('namespace'=>'AppUser'),function(){
 });
 Route::group(array('prefix' => 'admin'),function(){
     Route::resource('project','AdminProjectController');
-    Route::resource('member','AdminMemberController');
+    Route::get('project/{id}/resource',array('uses'=>'AdminProjectController@resource'));
+    
+    Route::resource('member','AdminMemberController',
+                array('names' => array('edit' => 'member.edit'))
+            );
+    Route::get('user/{id}/edit',array('as'=>'user.edit',function($id){
+        $user = User::find($id);
+        //die($user->name);
+        if($user->group_id==User::MEMBER_GROUP){
+            return Redirect::to(route('member.edit',array('id'=>$user->member->id)));
+        }
+    }));
 });
 

@@ -9,8 +9,10 @@
                 <h4 class="sidebar-title">Actions</h4>
                 <ul class="list-unstyled actions-sidebar">
                     <li><a href="/admin/member">All member</a></li>
-                    <li><a href="#">Import project</a></li>
-                    <li><a href="#">Export project</a></li>
+                    <li><a href="/admin/member/create">Create member</a></li>
+                    <li>
+                         <?=Form::delete('/admin/member/'.$member->id, 'Delete this member','Are you sure delete this member ?')?>
+                    </li>
                 </ul> 
             </div>
         </div>
@@ -18,11 +20,15 @@
     <div class="col-sm-9">
         <div class="webpage">
             <h3>Member detail <small>* -signifies as required field</small></h3>
-            
+                
               <?php 
                     if (Session::has('message')){
                         $message = Session::get('message');
                         echo HTML::alert('success',$message,'Success');
+                    }
+                    if (Session::has('error_message')){
+                        $message = Session::get('error_message');
+                        echo HTML::alert('danger',$message,'Error');
                     }
                 ?>
                  <?php 

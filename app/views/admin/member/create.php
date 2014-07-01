@@ -6,11 +6,9 @@
     <div class="col-sm-3">
         <div class="webpage">
             <div class="row">
-                <h4 class="sidebar-title">Actions</h4>
+                <h4 class="sidebar-title ">Actions</h4>
                 <ul class="list-unstyled actions-sidebar">
                     <li><a href="/admin/member">All member</a></li>
-                    <li><a href="#">Import project</a></li>
-                    <li><a href="#">Export project</a></li>
                 </ul> 
             </div>
         </div>
@@ -23,6 +21,10 @@
                     if (Session::has('message')){
                         $message = Session::get('message');
                         echo HTML::alert('success',$message,'Success');
+                    }
+                    if (Session::has('error_message')){
+                        $message = Session::get('error_message');
+                        echo HTML::alert('danger',$message,'Error');
                     }
                 ?>
                  <?php 

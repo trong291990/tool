@@ -15,6 +15,9 @@ class User extends BaseModel {
      *
      * @var string
      */
+    const MEMBER_GROUP = 3;
+    const CLIENT_GROUP = 2;
+    const ADMIN_GROUP  = 1;
     protected $table = 'users';
 
     /**
