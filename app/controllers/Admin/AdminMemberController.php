@@ -8,7 +8,11 @@ class AdminMemberController extends \BaseAdminController {
 	 */
 	public function index()
 	{
+           /*echo "<pre>";
+           print_r();
+           echo "</pre>";*/
            $members = Member::paginate(5);
+           
            $this->render(\View::make('admin.member.index')->with('members',$members));
 	}
 
