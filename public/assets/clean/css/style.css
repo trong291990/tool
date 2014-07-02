@@ -166,14 +166,38 @@ form .form-actions {
 .link-user-name:hover {
     text-decoration: none;
 }
+#alert-page {
+    position: fixed;
+    top:0;
+    width: 100%;
+    margin: auto;
+    margin-top: 10px;
+    z-index: 9999;
+}
+#alert-page .alert {
+    width: 100%;
+    text-align: center
+}
 /************* ADD PROJECT *****************/
 .project-manager {
     height: 100px;
     border: 1px solid #ccc;
+    list-style: none;
+    padding-top: 15px;
+    padding-left: 0;
+    text-align: center
+}
+.project-manager li  {
+    margin: auto;
+    text-align: center;
+    width: 70px;
+    height: 70px;
 }
 #project-member {
    min-height: 200px;
-   border: 1px solid #ccc; 
+   border: 1px solid #ccc;
+   list-style: none;
+   padding: 0; 
 }
 #project-source-resource {
     min-height: 335px;
@@ -181,7 +205,7 @@ form .form-actions {
     list-style: none;
     padding: 0;
 }
-#project-source-resource li {
+#project-source-resource li,#project-member li {
     display: inline-block;
     margin: 8.5px;
 }

@@ -16,12 +16,6 @@
     </div>
     <div class="col-sm-9">
         <div class="webpage">
-             <?php 
-                    if (Session::has('message')){
-                        $message = Session::get('message');
-                        echo HTML::alert('success',$message,'Success');
-                    }
-             ?>
              <table class="table" id="admin-list-member-table">
                     <tbody>
                         <tr>
@@ -30,7 +24,7 @@
                         <th>Name</th>
                         <th>Email</th>
                         <th>Phone number</th>
-                        <th>Joined at</td>
+                        <th>Joined at</th>
                         <th>Actions</th>
                     </tr>
                     <?php foreach ($members as $member): ?>

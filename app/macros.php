@@ -37,5 +37,5 @@ HTML::macro('alert', function($type, $message, $head = null) {
             $head = $head ? $head : 'Success';
             break;
     }
-    return '<div class="alert alert-'. $type .'"><strong>'. $head .': </strong>' . $message . '</div>';
+    return '<div class="alert alert-'. $type .'"><button data-dismiss="alert" class="close" type="button"><span aria-hidden="true">×</span><span class="sr-only">Close</span></button><strong>'. $head .'! </strong>' . $message . '</div>';
 });

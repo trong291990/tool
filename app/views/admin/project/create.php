@@ -15,18 +15,7 @@
     </div>
     <div class="col-sm-9">
         <div class="webpage">
-            <h3>Project detail <small>* -signifies as required field</small></h3>
-            
-              <?php 
-                    if (Session::has('message')){
-                        $message = Session::get('message');
-                        echo HTML::alert('success',$message,'Success');
-                    }
-                    if (Session::has('error_message')){
-                        $message = Session::get('error_message');
-                        echo HTML::alert('danger',$message,'Success');
-                    }
-                ?>
+            <h3>Project detail <small>* -signifies as required field</small></h3>             
                  <?php 
                     echo Former::horizontal_open('/admin/project')
                         ->class('form-in-box')

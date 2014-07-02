@@ -91,15 +91,38 @@ class AdminProjectController extends \BaseAdminController {
 	 * @param  int  $id
 	 * @return Response
 	 */
-	public function destroy($id)
-	{
-		//
+	public function destroy($id) {
+            
 	}
         
         public function resource($id){
             $project = Project::find($id);
-            $members = Member::all();
-            $this->render(\View::make('admin.project.resource')->with(compact('project','members')));
+            $scrumMaster = null;$productOwner = null;
+            if($project->product_owner){
+                $productOwner = Member::find($project->product_owner);
+            }
+            if($project->scrum_master){
+                $scrumMaster = Member::find($project->scrum_master);
+            }
+            $projectMembers = $project->members;
+            $members = $project->getFreeMembers();
+            $this->render(\View::make('admin.project.resource')->with(compact('project','members',
+                                                                'projectMembers','productOwner','scrumMaster')));
+        }
+        public function updateResource($id){
+            $data = Input::all();
+            $project = Project::find($id);
+            if(isset($data['scrum_master'])){
+                $project->scrum_master = $data['scrum_master'];
+            }else {
+                $project->scrum_master = '';
+            }
+            $project->product_owner = $data['product_owner'];
+            $project->save();
+            $project->members()->sync($data['members']);
+            $message = "The project has been saved";
+            Session::flash('message',$message);
+            return Redirect::to("/admin/project/{$project->id}/resource");
         }
 
 }

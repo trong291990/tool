@@ -33,10 +33,10 @@ Route::group(array('prefix' => 'admin'),function(){
             );
     Route::get('user/{id}/edit',array('as'=>'user.edit',function($id){
         $user = User::find($id);
-        //die($user->name);
         if($user->group_id==User::MEMBER_GROUP){
             return Redirect::to(route('member.edit',array('id'=>$user->member->id)));
         }
     }));
+    Route::post('project/{id}/update-resource',array('as'=>'update_resource','uses'=>'AdminProjectController@updateResource'));
 });
 

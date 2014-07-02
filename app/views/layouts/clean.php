@@ -8,8 +8,6 @@
         <link href="/assets/clean/css/font-awesome.min.css" rel="stylesheet" />
         <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,300italic,400italic,600,600italic,700' rel='stylesheet' type='text/css'>
         <link href="/assets/clean/css/style.css" rel="stylesheet" />
-        <script type="text/javascript" src="/assets/clean/js/jquery-2.1.0.min.js"></script>
-        <script type="text/javascript" src="/assets/clean/js/bootstrap.min.js"></script>
     </head>
     <body>
         <div role="navigation" id="main-nav" class="navbar navbar-default">
@@ -37,12 +35,35 @@
               </div><!--/.nav-collapse -->
             </div>
         </div>
+        <div id="alert-page">
+            <div  class="container">
+                <div  class="col-sm-8 col-sm-offset-2">
+                    <?php 
+                    if (Session::has('message')){
+                        $message = Session::get('message');
+                        echo HTML::alert('success',$message,'Success');
+                    }
+                    if (Session::has('error_message')){
+                        $message = Session::get('error_message');
+                        echo HTML::alert('danger',$message,'Success');
+                    }
+                    if (Session::has('warning_message')){
+                        $message = Session::get('error_message');
+                        echo HTML::alert('warning',$message,'Warning');
+                    }
+                    ?>
+                </div>
+            </div>
+        </div>
         <div class="page-content container">
             <?php echo $content;?>
         </div>
         <div id="footer">
             Copyright 2014 - SRF Software
         </div>
+        <script type="text/javascript" src="/assets/clean/js/jquery-2.1.0.min.js"></script>
+        <script type="text/javascript" src="/assets/clean/js/bootstrap.min.js"></script>
+        <script type="text/javascript" src="/assets/clean/js/scrum.js"></script>
         <?php echo View::yieldContent('script') ?>
     </body>
 </html>

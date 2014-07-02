@@ -53,8 +53,8 @@
               <tr>
                 <td><?=$project->id?></td>
                 <td><?=$project->name?></td>
-                <td><?=LocalizedCarbon::createFromFormat('Y-m-d',$project->plan_start_date)->format('m/d/Y')?></td>
-                <td><?=LocalizedCarbon::createFromFormat('Y-m-d',$project->actual_start_date)->format('m/d/Y')?></td>
+                <td><?= $project->plan_start_date ? LocalizedCarbon::createFromFormat('Y-m-d',$project->plan_start_date)->format('m/d/Y') : ''?></td>
+                <td><?= $project->actual_start_date ? LocalizedCarbon::createFromFormat('Y-m-d',$project->actual_start_date)->format('m/d/Y'): ''?></td>
                 <td><?=$label?></td>
                 <td class="actions-td">
                     <a title="View & Edit" class="edit" href="/admin/project/<?=$project->id?>/edit">View & Edit</a>
