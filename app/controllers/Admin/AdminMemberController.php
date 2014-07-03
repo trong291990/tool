@@ -6,14 +6,14 @@ class AdminMemberController extends \BaseAdminController {
 	 *
 	 * @return Response
 	 */
+        public function __construct() {
+               //$this->loadAndAuthorizeResource('Member', ['parent' => false]);
+        }
 	public function index()
 	{
-           /*echo "<pre>";
-           print_r();
-           echo "</pre>";*/
-           $members = Member::paginate(5);
-           
-           $this->render(\View::make('admin.member.index')->with('members',$members));
+           $this->members = Member::paginate(5);
+           //$this->authorize('read',$this->members);
+           $this->render(\View::make('admin.member.index')->with('members',$this->members));
 	}
 
 

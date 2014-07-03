@@ -4,14 +4,15 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.2.*",
+		"laravel/framework": "4.1.*",
                 "barryvdh/laravel-twigbridge": "0.3.x",
-                "machuga/authority-l4" : "dev-master",
                 "darsain/laravel-console": "dev-master",
                 "doctrine/dbal": "~2.3",
                 "anahkiasen/former": "dev-master",
                 "laravelrus/localized-carbon": "1.*",
-		"davejamesmiller/laravel-breadcrumbs": "~2.2.1"
+		"davejamesmiller/laravel-breadcrumbs": "~2.2.1",
+		"barryvdh/laravel-ide-helper": "1.*",
+		"efficiently/authority-controller": "1.2.*"
 	},
 	"autoload": {
 		"classmap": [
@@ -30,6 +31,7 @@
 		],
 		"post-update-cmd": [
 			"php artisan clear-compiled",
+                        "php artisan ide-helper:generate",
 			"php artisan optimize"
 		],
 		"post-create-project-cmd": [

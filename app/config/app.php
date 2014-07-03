@@ -122,12 +122,12 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
                 'Barryvdh\TwigBridge\ServiceProvider',
-                'Authority\AuthorityL4\AuthorityL4ServiceProvider',
                 'Way\Generators\GeneratorsServiceProvider',
                 'Darsain\Console\ConsoleServiceProvider',
                 'Former\FormerServiceProvider',
                 'DaveJamesMiller\Breadcrumbs\ServiceProvider',
-            
+                'Barryvdh\LaravelIdeHelper\IdeHelperServiceProvider',
+                'Efficiently\AuthorityController\AuthorityControllerServiceProvider',
 	),
 
 	/*
@@ -195,11 +195,12 @@ return array(
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
                 'Twig' => 'Barryvdh\TwigBridge\Twig',
-                'Authority' => 'Authority\AuthorityL4\Facades\Authority',
                 'Former' => 'Former\Facades\Former',
                 'LocalizedCarbon' => 'Laravelrus\LocalizedCarbon\LocalizedCarbon',
                 'DiffFormatter'   => 'Laravelrus\LocalizedCarbon\DiffFactoryFacade',
                 'Breadcrumbs' => 'DaveJamesMiller\Breadcrumbs\Facade',
+                'Params'    => 'Efficiently\AuthorityController\Facades\Params',
+                'Authority' => 'Efficiently\AuthorityController\Facades\Authority',
 	),
 
 );

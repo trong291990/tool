@@ -7,9 +7,6 @@ use Illuminate\Auth\Reminders\RemindableInterface;
 
 class User extends BaseModel {
 
-    use UserTrait,
-        RemindableTrait;
-
     /**
      * The database table used by the model.
      *
@@ -45,22 +42,22 @@ class User extends BaseModel {
 
 
 
-//    public function roles() {
-//        return $this->belongsToMany('Role');
-//    }
-//
-//    public function permissions() {
-//        return $this->hasMany('Permission');
-//    }
-//
-//    public function hasRole($key) {
-//        foreach ($this->roles as $role) {
-//            if ($role->name === $key) {
-//                return true;
-//            }
-//        }
-//        return false;
-//    }
+    public function roles() {
+        return $this->belongsToMany('Role');
+    }
+
+    public function permissions() {
+        return $this->hasMany('Permission');
+    }
+
+    public function hasRole($key) {
+        foreach ($this->roles as $role) {
+            if ($role->name === $key) {
+                return true;
+            }
+        }
+        return false;
+    }
 
     public static function generalPassword($length=6){
         $characters = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ';
@@ -70,10 +67,8 @@ class User extends BaseModel {
         }
         return $randomString;
     }
-    
 
-    public static function boot()
-    {
+    public static function boot() {
         parent::boot();
         static::creating(function($page)
         {

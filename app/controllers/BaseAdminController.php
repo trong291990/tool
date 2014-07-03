@@ -13,4 +13,5 @@
  */
 class BaseAdminController extends BaseController {
     public $layout = 'layouts.clean';
+    
 }

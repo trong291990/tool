@@ -37,7 +37,7 @@ class AdminProjectController extends \BaseAdminController {
             $project->plan_start_date = Input::get('plan_start_date');
             $project->plan_end_date = Input::get('plan_end_date');
             $validator = $project->isFailValidation();
-            if($validator){
+            if($validator) {
                 $error_message = "The project could not be saved";
                 Session::flash('error_message',$error_message);
                 return Redirect::to('/admin/member/create')->withErrors($validator);
@@ -92,7 +92,8 @@ class AdminProjectController extends \BaseAdminController {
 	 * @return Response
 	 */
 	public function destroy($id) {
-            
+            $project = Project::find($id);
+            $project->delete();
 	}
         
         public function resource($id){
