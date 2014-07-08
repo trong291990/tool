@@ -4,9 +4,9 @@ Breadcrumbs::register('home', function($breadcrumbs) {
     $breadcrumbs->push('Home','/admin');
 });
 
-Breadcrumbs::register('member', function($breadcrumbs) {
+Breadcrumbs::register('user', function($breadcrumbs) {
     $breadcrumbs->parent('home');
-    $breadcrumbs->push('Members','/admin/member');
+    $breadcrumbs->push('Users','/admin/user');
 });
 Breadcrumbs::register('add_member', function($breadcrumbs) {
     $breadcrumbs->parent('member');

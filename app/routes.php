@@ -28,9 +28,7 @@ Route::group(array('prefix' => 'admin'),function(){
     Route::resource('project','AdminProjectController');
     Route::get('project/{id}/resource',array('uses'=>'AdminProjectController@resource'));
     
-    Route::resource('member','AdminMemberController',
-                array('names' => array('edit' => 'member.edit'))
-            );
+    Route::resource('user','AdminUserController');
     Route::get('user/{id}/edit',array('as'=>'user.edit',function($id){
         $user = User::find($id);
         if($user->group_id==User::MEMBER_GROUP){
